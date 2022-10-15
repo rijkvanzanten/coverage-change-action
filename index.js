@@ -3,7 +3,7 @@ import github from "@actions/github";
 
 const octokit = github.getOctokit(core.getInput("github-token"));
 
-console.log(octokit, octokit.rest, octokit.rest.issues);
+core.log(octokit, octokit.rest, octokit.rest.issues);
 
 try {
 	await octokit.rest.issues.createComment({
