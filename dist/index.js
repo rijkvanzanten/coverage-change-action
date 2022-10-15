@@ -9583,11 +9583,11 @@ __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("github-token"));
 
 try {
-	await octokit.issues.createComment({
-		repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo,
+	await octokit.rest.issues.createComment({
 		owner: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.owner,
-		body: "Hello World",
+		repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo,
 		issue_number: context.payload.number,
+		body: "Hello World",
 	});
 } catch (error) {
 	_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed(error.message);
