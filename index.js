@@ -7,7 +7,7 @@ try {
 	await octokit.rest.issues.createComment({
 		owner: github.context.owner,
 		repo: github.context.repo,
-		issue_number: github.context.payload.number,
+		issue_number: github.event.number,
 		body: "Hello World",
 	});
 } catch (error) {
