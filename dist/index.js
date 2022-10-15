@@ -9583,16 +9583,19 @@ __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("github-token"));
 
 try {
-	const { owner, repo, issue_number } = _actions_github__WEBPACK_IMPORTED_MODULE_1__.context;
+	const {
+		repo: { owner, repo },
+		issue: { number },
+	} = _actions_github__WEBPACK_IMPORTED_MODULE_1__.context;
 
 	console.log(
-		`Adding comment to PR ${issue_number} in repo ${repo} owned by ${owner}`
+		`Adding comment to PR ${number} in repo ${repo} owned by ${owner}`
 	);
 
 	await octokit.rest.issues.createComment({
 		owner,
 		repo,
-		issue_number,
+		issue_number: number,
 		body: "Hello World",
 	});
 } catch (error) {
