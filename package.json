@@ -1,0 +1,16 @@
+{
+  "name": "coverage-change-action",
+  "private": true,
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "author": "Rijk van Zanten <rijkvanzanten@me.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitest/coverage-c8": "^0.24.3",
+    "vitest": "^0.24.3"
+  }
+}
