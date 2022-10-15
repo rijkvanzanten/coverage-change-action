@@ -9586,7 +9586,7 @@ try {
 	await octokit.rest.issues.createComment({
 		owner: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.owner,
 		repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo,
-		issue_number: _actions_github__WEBPACK_IMPORTED_MODULE_1__.event.number,
+		issue_number: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.issue.number,
 		body: "Hello World",
 	});
 } catch (error) {
