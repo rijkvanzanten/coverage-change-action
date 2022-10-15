@@ -3,12 +3,14 @@ import github from "@actions/github";
 
 const octokit = github.getOctokit(core.getInput("github-token"));
 
+console.log(octokit, octokit.rest, octokit.rest.issues);
+
 try {
 	await octokit.rest.issues.createComment({
-		repo: github.context.repo,
 		owner: github.context.owner,
-		body: "Hello World",
+		repo: github.context.repo,
 		issue_number: context.payload.number,
+		body: "Hello World",
 	});
 } catch (error) {
 	core.setFailed(error.message);
