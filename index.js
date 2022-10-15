@@ -4,7 +4,7 @@ import github from "@actions/github";
 const octokit = github.getOctokit(core.getInput("github-token"));
 
 try {
-	await octokit.issues.createComment({
+	await octokit.rest.issues.createComment({
 		repo: github.context.repo,
 		owner: github.context.owner,
 		body: "Hello World",
