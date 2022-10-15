@@ -4,10 +4,16 @@ import github from "@actions/github";
 const octokit = github.getOctokit(core.getInput("github-token"));
 
 try {
+	const { owner, repo, issue_number } = github.context;
+
+	console.log(
+		`Adding comment to PR ${issue_number} in repo ${repo} owned by ${owner}`
+	);
+
 	await octokit.rest.issues.createComment({
-		owner: github.context.owner,
-		repo: github.context.repo,
-		issue_number: github.context.issue.number,
+		owner,
+		repo,
+		issue_number,
 		body: "Hello World",
 	});
 } catch (error) {
