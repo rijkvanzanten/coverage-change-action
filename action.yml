@@ -1,0 +1,10 @@
+name: 'Coverage Change'
+description: 'Show the change in coverage percentage of the changed files'
+inputs:
+  github-token:
+    description: GitHub Token
+    required: true
+    default: ${{ github.token }}
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
