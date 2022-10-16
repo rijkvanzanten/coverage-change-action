@@ -9577,33 +9577,60 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("zlib");
 __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__) => {
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(7954);
 /* harmony import */ var _actions_github__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(9939);
+/* harmony import */ var _lib_create_comment_js__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(2183);
 
 
 
-const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("github-token"));
 
 try {
+	await (0,_lib_create_comment_js__WEBPACK_IMPORTED_MODULE_2__/* .createComment */ .Y)(_actions_github__WEBPACK_IMPORTED_MODULE_1__.context, "Hello!!");
+} catch (error) {
+	(0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed)(error);
+}
+
+__webpack_handle_async_dependencies__();
+}, 1);
+
+/***/ }),
+
+/***/ 2183:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
+
+
+// EXPORTS
+__nccwpck_require__.d(__webpack_exports__, {
+  "Y": () => (/* binding */ createComment)
+});
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/@actions+core@1.10.0/node_modules/@actions/core/lib/core.js
+var core = __nccwpck_require__(7954);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@actions+github@5.1.1/node_modules/@actions/github/lib/github.js
+var github = __nccwpck_require__(9939);
+;// CONCATENATED MODULE: ./lib/get-octokit.js
+
+
+
+const getOctokit = () => (0,github.getOctokit)((0,core.getInput)("github-token"));
+
+;// CONCATENATED MODULE: ./lib/create-comment.js
+
+
+const createComment = async (context, body) => {
+	const octokit = getOctokit();
+
 	const {
 		repo: { owner, repo },
 		issue: { number },
-	} = _actions_github__WEBPACK_IMPORTED_MODULE_1__.context;
-
-	console.log(
-		`Adding comment to PR ${number} in repo ${repo} owned by ${owner}`
-	);
+	} = context;
 
 	await octokit.rest.issues.createComment({
 		owner,
 		repo,
 		issue_number: number,
-		body: "Hello World",
+		body,
 	});
-} catch (error) {
-	_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed(error);
-}
+};
 
-__webpack_handle_async_dependencies__();
-}, 1);
 
 /***/ }),
 
@@ -9719,6 +9746,23 @@ module.exports = JSON.parse('[[[0,44],"disallowed_STD3_valid"],[[45,46],"valid"]
 /******/ 		}).then(outerResolve, reject);
 /******/ 		isEvaluating = false;
 /******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/define property getters */
+/******/ (() => {
+/******/ 	// define getter functions for harmony exports
+/******/ 	__nccwpck_require__.d = (exports, definition) => {
+/******/ 		for(var key in definition) {
+/******/ 			if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
+/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 			}
+/******/ 		}
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/hasOwnProperty shorthand */
+/******/ (() => {
+/******/ 	__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ })();
 /******/ 
 /******/ /* webpack/runtime/compat */

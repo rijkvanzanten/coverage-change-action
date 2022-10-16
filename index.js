@@ -1,24 +1,9 @@
-import core from "@actions/core";
-import github from "@actions/github";
-
-const octokit = github.getOctokit(core.getInput("github-token"));
+import { setFailed } from "@actions/core";
+import { context } from "@actions/github";
+import { createComment } from "./lib/create-comment.js";
 
 try {
-	const {
-		repo: { owner, repo },
-		issue: { number },
-	} = github.context;
-
-	console.log(
-		`Adding comment to PR ${number} in repo ${repo} owned by ${owner}`
-	);
-
-	await octokit.rest.issues.createComment({
-		owner,
-		repo,
-		issue_number: number,
-		body: "Hello World",
-	});
+	await createComment(context, "Hello!!");
 } catch (error) {
-	core.setFailed(error);
+	setFailed(error);
 }

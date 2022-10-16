@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@actions/core': ^1.10.0
+  '@actions/exec': ^1.1.1
   '@actions/github': ^5.1.1
   '@vercel/ncc': ^0.34.0
   '@vitest/coverage-c8': ^0.24.3
@@ -9,6 +10,7 @@ specifiers:
 
 dependencies:
   '@actions/core': 1.10.0
+  '@actions/exec': 1.1.1
   '@actions/github': 5.1.1
 
 devDependencies:
@@ -23,6 +25,12 @@ packages:
     dependencies:
       '@actions/http-client': 2.0.1
       uuid: 8.3.2
+    dev: false
+
+  /@actions/exec/1.1.1:
+    resolution: {integrity: sha512-+sCcHHbVdk93a0XT19ECtO/gIXoxvdsgQLzb2fE2/5sIZmWQuluYyjPQtrtTHdU1YzTZ7bAPN4sITq2xi1679w==}
+    dependencies:
+      '@actions/io': 1.1.2
     dev: false
 
   /@actions/github/5.1.1:
@@ -40,6 +48,10 @@ packages:
     resolution: {integrity: sha512-PIXiMVtz6VvyaRsGY268qvj57hXQEpsYogYOu2nrQhlf+XCGmZstmuZBbAybUl1nQGnvS1k1eEsQ69ZoD7xlSw==}
     dependencies:
       tunnel: 0.0.6
+    dev: false
+
+  /@actions/io/1.1.2:
+    resolution: {integrity: sha512-d+RwPlMp+2qmBfeLYPLXuSRykDIFEwdTA0MMxzS9kh4kvP1ftrc/9fzy6pX6qAjthdXruHQ6/6kjT/DNo5ALuw==}
     dev: false
 
   /@bcoe/v8-coverage/0.2.3:
