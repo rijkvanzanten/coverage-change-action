@@ -11,7 +11,7 @@ afterEach(() => {
 });
 
 test('Creates octokit using "github-token" input', () => {
-	const mockInstance = {};
+	const mockInstance = {} as ReturnType<typeof getOctokitInstance>;
 
 	vi.mocked(getInput).mockReturnValue("test-token");
 	vi.mocked(getOctokitInstance).mockReturnValue(mockInstance);

@@ -1,25 +1,26 @@
 {
-  "name": "coverage-change-action",
-  "private": true,
-  "version": "0.0.1",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "vitest",
-    "coverage": "vitest run --coverage",
-    "build": "ncc build index.js --license licenses.txt"
-  },
-  "author": "Rijk van Zanten <rijkvanzanten@me.com>",
-  "license": "ISC",
-  "devDependencies": {
-    "@vercel/ncc": "^0.34.0",
-    "@vitest/coverage-c8": "^0.24.3",
-    "vitest": "^0.24.3"
-  },
-  "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/exec": "^1.1.1",
-    "@actions/github": "^5.1.1",
-    "globby": "^13.1.2"
-  }
+	"name": "coverage-change-action",
+	"private": true,
+	"version": "0.0.1",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "vitest",
+		"coverage": "vitest run --coverage",
+		"build": "ncc build index.ts --license licenses.txt"
+	},
+	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
+	"license": "ISC",
+	"devDependencies": {
+		"@vercel/ncc": "^0.34.0",
+		"@vitest/coverage-c8": "^0.24.3",
+		"typescript": "^4.8.4",
+		"vitest": "^0.24.3"
+	},
+	"dependencies": {
+		"@actions/core": "^1.10.0",
+		"@actions/exec": "^1.1.1",
+		"@actions/github": "^5.1.1",
+		"globby": "^13.1.2"
+	}
 }
