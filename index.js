@@ -1,9 +1,12 @@
-import { setFailed } from "@actions/core";
+import { setFailed, setOutput } from "@actions/core";
 import { context } from "@actions/github";
-import { createComment } from "./lib/create-comment.js";
+import { runTests } from "./lib/run-tests.js";
+import { findCloverFiles } from "./lib/find-clover-files.js";
 
 try {
-	await createComment(context, "Hello!!");
+	await runTests();
+	const cloverFiles = await findCloverFiles();
+	setOutput("report", "hello");
 } catch (error) {
 	setFailed(error);
 }
