@@ -11692,14 +11692,17 @@ __nccwpck_require__.a(module, async (__webpack_handle_async_dependencies__) => {
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(7954);
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nccwpck_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lib_find_clover_files_js__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(5079);
-/* harmony import */ var _lib_run_tests_js__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(2874);
+/* harmony import */ var _lib_install_dependencies_js__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(3341);
+/* harmony import */ var _lib_run_tests_js__WEBPACK_IMPORTED_MODULE_3__ = __nccwpck_require__(2874);
+
 
 
 
 try {
-    await (0,_lib_run_tests_js__WEBPACK_IMPORTED_MODULE_2__/* .runTests */ .c)();
-    await (0,_lib_find_clover_files_js__WEBPACK_IMPORTED_MODULE_1__/* .findCloverFiles */ .c)();
-    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput)("report", "hello");
+    await (0,_lib_install_dependencies_js__WEBPACK_IMPORTED_MODULE_2__/* .installDependencies */ .t)();
+    await (0,_lib_run_tests_js__WEBPACK_IMPORTED_MODULE_3__/* .runTests */ .c)();
+    const files = await (0,_lib_find_clover_files_js__WEBPACK_IMPORTED_MODULE_1__/* .findCloverFiles */ .c)();
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput)("report", files.join(", "));
 }
 catch (error) {
     (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed)(error);
@@ -12089,6 +12092,22 @@ const generateGlobTasksSync = normalizeArgumentsSync(generateTasksSync);
 const findCloverFiles = async () => {
     const paths = await globby(["**/coverage/clover.xml"]);
     return paths;
+};
+
+
+/***/ }),
+
+/***/ 3341:
+/***/ ((__unused_webpack_module, __webpack_exports__, __nccwpck_require__) => {
+
+/* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
+/* harmony export */   "t": () => (/* binding */ installDependencies)
+/* harmony export */ });
+/* harmony import */ var _actions_exec__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(5082);
+/* harmony import */ var _actions_exec__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nccwpck_require__.n(_actions_exec__WEBPACK_IMPORTED_MODULE_0__);
+
+const installDependencies = async () => {
+    await (0,_actions_exec__WEBPACK_IMPORTED_MODULE_0__.exec)("pnpm", ["install"]);
 };
 
 
