@@ -1,5 +1,5 @@
-import { test, expect, afterEach, vi } from "vitest";
 import { globby } from "globby";
+import { afterEach, expect, test, vi } from "vitest";
 import { findCloverFiles } from "./find-clover-files.js";
 
 vi.mock("globby");

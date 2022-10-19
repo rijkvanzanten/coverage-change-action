@@ -4,9 +4,11 @@ specifiers:
   '@actions/core': ^1.10.0
   '@actions/exec': ^1.1.1
   '@actions/github': ^5.1.1
+  '@types/sax': ^1.2.4
   '@vercel/ncc': ^0.34.0
   '@vitest/coverage-c8': ^0.24.3
   globby: ^13.1.2
+  sax: ^1.2.4
   typescript: ^4.8.4
   vitest: ^0.24.3
 
@@ -15,8 +17,10 @@ dependencies:
   '@actions/exec': 1.1.1
   '@actions/github': 5.1.1
   globby: 13.1.2
+  sax: 1.2.4
 
 devDependencies:
+  '@types/sax': 1.2.4
   '@vercel/ncc': 0.34.0
   '@vitest/coverage-c8': 0.24.3
   typescript: 4.8.4
@@ -226,6 +230,12 @@ packages:
 
   /@types/node/18.11.0:
     resolution: {integrity: sha512-IOXCvVRToe7e0ny7HpT/X9Rb2RYtElG1a+VshjwT00HxrM2dWBApHQoqsI6WiY7Q03vdf2bCrIGzVrkF/5t10w==}
+    dev: true
+
+  /@types/sax/1.2.4:
+    resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
+    dependencies:
+      '@types/node': 18.11.0
     dev: true
 
   /@vercel/ncc/0.34.0:
@@ -974,6 +984,10 @@ packages:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
       queue-microtask: 1.2.3
+    dev: false
+
+  /sax/1.2.4:
+    resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
     dev: false
 
   /semver/6.3.0:
